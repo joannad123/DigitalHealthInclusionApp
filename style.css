@@ -1,0 +1,40 @@
+h1 {
+    color : navy;
+    font-family: Arial;
+}
+
+h2 {
+    font-family: Arial;
+}
+
+p {
+    font-family: Arial;
+}
+
+.button {
+    text-align: left;
+}
+
+#beginBtn {
+    //color: navy;
+    position: absolute;
+    top : 35%;
+    font-size: large;
+    width: 250px;
+    height:50px;
+    font-family: Arial;
+}
+
+#yes {
+    font-size: large;
+    width: 250px;
+    height:50px;
+    font-family: Arial;
+}
+
+#no {
+    font-size: large;
+    width: 250px;
+    height:50px;
+    font-family: Arial;
+}
