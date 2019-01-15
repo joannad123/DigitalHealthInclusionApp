@@ -11,23 +11,20 @@
 
 <form name = "login" method="post">
 
-<div class = "login">
-    <p>Username</p>
-    <input type = "text" name="username" >
+    <div class = "login">
+        <p>Username</p>
+        <input type = "text" name="username" >
 
-    <p>Password</p>
-    <input type = "password" name="password" >
+        <p>Password</p>
+        <input type = "password" name="password" >
 
-    <p><input type = "submit" name="submit"></p>
+        <p><input type = "submit" name="submit"></p>
 
-</div>
+    </div>
 
     <?php
 
     session_start();
-
-    $username = strip_tags((isset($_POST["username"]) ? $_POST["username"] : ""));
-    $password = (isset($_POST["password"]) ? md5($_POST["password"]) : "");
 
     $host = "devweb2018.cis.strath.ac.uk";
     $user = "wjb15159";
@@ -39,39 +36,35 @@
         die("Connection failed".$conn->connect_error);
     }
 
-    if(($username != "") && checkUsername($conn, $username)){
-        $username = "";
-        $usernameError = "There is already an account associated with that username, please choose another one.";
-        echo "<p id='error'>".$usernameError."</p>";
-    }
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = mysqli_real_escape_string($conn,$_POST['username']);
+    $password = mysqli_real_escape_string($conn,$_POST['password']);
 
-    if(isset($_SESSION["username"]) && isset($_SESSION["password"])){
-        $username = $_SESSION["username"];
-        $password = $_SESSION["password"];
-    }
+        $sql = "SELECT id FROM user_score WHERE username = '$username' and password = '$password'";
+        $result = mysqli_query($conn,$sql);
+        $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
+        $count = mysqli_num_rows($result);
 
-    $sql = "INSERT INTO `user_score` (`username`, `password`, `age`, `ability`, `frequency`, `score`) VALUES ('$username', '$password', '12', '1', '2', '3');";
-
-    if($conn->query($sql) === TRUE){
-        header("Location: age.php");
-        exit();
-    }
-
-    function checkUsername($connection, $username)
-    {
-        $sqlUsers = "SELECT * FROM `user_score` WHERE `username` = '$username'";
-        $resultLogin = $connection->query($sqlUsers);
-
-        if ($resultLogin->num_rows > 0) {
-            return true;
+        if($count == 1) {
+            $_SESSION['login_user'] = $username;
+            echo "<script>
+            alert('You have successfully logged in!');
+            window.location.href='age.php';
+            </script>";
+            exit();
+        }else {
+            $error = "Your username or password is invalid";
         }
-        return false;
     }
-
     ?>
 
-</div>
+    </div>
 </form>
 </body>
 </html>
+
+
+
+
+

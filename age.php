@@ -10,16 +10,18 @@
 
 <form name = "login" method="post">
 
-<div class = "age">
+    <div class = "age">
 
         <p>Age</p>
         <input type = "number" name="age">
 
         <p><input type = "submit" name="submit"></p>
 
-</div>
+    </div>
 
     <?php
+
+    session_start();
 
     $age = strip_tags((isset($_POST["age"]) && is_numeric($_POST["age"])) ? $_POST["age"] : "");
 
@@ -36,7 +38,7 @@
 
     //TODO : check username that is logged in and update age for that entry
 
-    $sql = "UPDATE user_score SET age='$age' WHERE username='joanna'";
+    $sql = "UPDATE user_score SET age='$age' WHERE username='$username'";
 
     if($conn->query($sql) === TRUE) {
         echo "<p>You have successfully submitted your age.</p>";
@@ -47,3 +49,5 @@
 </form>
 </body>
 </html>
+
+
