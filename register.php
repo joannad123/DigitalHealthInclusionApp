@@ -19,25 +19,21 @@
 
         <p><input type = "submit" name="submit"></p>
 
+        <h2> Or if you already have an account, go to the login page </h2>
+
+        <p><input type ="button" value="Go To Login" id="loginBtn"
+                  onclick="window.location = 'login.php'"/></p>
+
     </div>
 
     <?php
 
+    include ("config.php");
+
     $username = strip_tags((isset($_POST["username"]) ? $_POST["username"] : ""));
     $password = (isset($_POST["password"]) ? ($_POST["password"]) : "");
 
-    $host = "devweb2018.cis.strath.ac.uk";
-    $user = "wjb15159";
-    $pass = "vahm0Iez4eex";
-    $dbname = "wjb15159";
-    $conn = new mysqli($host, $user, $pass, $dbname);
-
-    if($conn->connect_error) {
-        die("Connection failed".$conn->connect_error);
-    }
-
-    //TODO : Fix so blank entries cant be entered, seems to work with username alone but not password
-
+//    TODO : Fix positioning, possibly have as alert
     if(($username != "") && checkUsername($conn, $username)){
         $username = "";
         $usernameError = "There is already an account associated with that username, please choose another one.";
@@ -46,8 +42,8 @@
 
     $sql = "";
 
-    if($username != "" || $password != "") {
-        $sql = "INSERT INTO `user_score` (`username`, `password`, `age`, `ability`, `frequency`, `score`) VALUES ('$username', '$password', '12', '1', '2', '3');";
+    if($username != "" && $password != "") {
+        $sql = "INSERT INTO `user_score` (`username`, `password`, `age`, `ability`, `frequency`, `score`) VALUES ('$username', '$password', '30', '1', '2', '3');";
         if ($conn->query($sql) === TRUE) {
             echo "<script>
         alert('Account created successfully, now login');
@@ -73,8 +69,4 @@
 </form>
 </body>
 </html>
-
-
-
-
 

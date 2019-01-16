@@ -6,22 +6,47 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>How would you rate your ability to use an app <br>
+<h1>How would you rate your ability to use an application<br>
     and its basic functions (For example, logging in<br>
     or navigating menus)?</h1>
 <div class = "ability">
 
     <form id= "ability" method="post">
 
-        <p><input type = "button" value="Beginner" id="1"</p>
-        <p><input type = "button" value="Average" id="2"</p>
-        <p><input type = "button" value="Advanced" id="3"</p>
+        <p><button name="click" type="submit" value="1" id="click">Beginner</button></p>
+        <p><button name="click" type="submit" value="2" id="click">Average</button></p>
+        <p><button name="click" type="submit" value="3" id="click">Advanced</button></p>
 
-        <p><input type = "submit" id="submit"></p>
-
-        <p><input type = "button" value="Next" id="next" onclick="window.location = 'frequency.php'"</p>
-
+        <input type ="button" value="Logout" id="logout"
+               onclick="window.location = 'logout.php'"/>
 </div>
 
+    <?php
+
+    include ("config.php");
+
+    session_start();
+
+    $loggedInUser = $_SESSION['username'];
+
+    $ability = "";
+
+    if(isset($_POST['click'])){
+        $ability = $_POST['click'];
+    }
+
+    $sql = "UPDATE user_score SET ability='$ability' WHERE username='$loggedInUser'";
+
+    if($conn->query($sql) === TRUE) {
+        echo "<script>
+            alert('You have successfully submitted your answer!');
+            window.location.href='frequency.php';
+            </script>";
+            exit();
+    }
+
+    ?>
+
+</form>
 </body>
 </html>

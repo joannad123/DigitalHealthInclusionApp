@@ -1,5 +1,4 @@
 h1 {
-    color : navy;
     font-family: Arial;
 }
 
@@ -9,38 +8,30 @@ h2 {
 
 p {
     font-family: Arial;
+    font-size: large;
 }
 
 .button {
     text-align: left;
 }
 
-#beginBtn {
-    //color: navy;
+#beginBtn, #loginBtn {
     position: absolute;
-    top : 35%;
+    top : 55%;
     font-size: large;
     width: 250px;
     height:50px;
     font-family: Arial;
 }
 
-#yes {
-    font-size: large;
-    width: 250px;
-    height:50px;
+input[type="submit"], #logout {
     font-family: Arial;
+    font-size: large;
+    width: 100px;
+    height:25px;
 }
 
-#no {
-    font-size: large;
-    width: 250px;
-    height:50px;
-    font-family: Arial;
-}
-
-
-#cancer {
+#click, #logoutBtn {
     font-size: large;
     width: 250px;
     height:50px;
@@ -48,34 +39,17 @@ p {
 }
 
 
-#pharmacy {
-    font-size: large;
-    width: 250px;
-    height:50px;
-    font-family: Arial;
-}
 
-#bCancer {
-    font-size: large;
-    width: 250px;
-    height:50px;
-    font-family: Arial;
-}
 
-#pCancer {
-    font-size: large;
-    width: 250px;
-    height:50px;
-    font-family: Arial;
-}
 
-#lCancer {
-    font-size: large;
-    width: 250px;
-    height:50px;
-    font-family: Arial;
-}
 
+
+
+
+
+
+
+/*SLIDESHOW STUFF*/
 .slideshow-container {
     position: relative;
     background: #f1f1f1f1;

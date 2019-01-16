@@ -20,25 +20,18 @@
 
         <p><input type = "submit" name="submit"></p>
 
+
     </div>
 
     <?php
 
+    include ("config.php");
+
     session_start();
 
-    $host = "devweb2018.cis.strath.ac.uk";
-    $user = "wjb15159";
-    $pass = "vahm0Iez4eex";
-    $dbname = "wjb15159";
-    $conn = new mysqli($host, $user, $pass, $dbname);
-
-    if($conn->connect_error) {
-        die("Connection failed".$conn->connect_error);
-    }
-
     if($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = mysqli_real_escape_string($conn,$_POST['username']);
-    $password = mysqli_real_escape_string($conn,$_POST['password']);
+        $username = mysqli_real_escape_string($conn,$_POST['username']);
+        $password = mysqli_real_escape_string($conn,$_POST['password']);
 
         $sql = "SELECT id FROM user_score WHERE username = '$username' and password = '$password'";
         $result = mysqli_query($conn,$sql);
@@ -47,7 +40,7 @@
         $count = mysqli_num_rows($result);
 
         if($count == 1) {
-            $_SESSION['login_user'] = $username;
+            $_SESSION['username'] = $username;
             echo "<script>
             alert('You have successfully logged in!');
             window.location.href='age.php';
@@ -57,14 +50,12 @@
             $error = "Your username or password is invalid";
         }
     }
+
     ?>
 
     </div>
 </form>
 </body>
 </html>
-
-
-
 
 

@@ -17,34 +17,33 @@
 
         <p><input type = "submit" name="submit"></p>
 
+        <input type ="button" value="Logout" id="logout"
+               onclick="window.location = 'logout.php'"/>
     </div>
 
     <?php
 
+    include ("config.php");
+
     session_start();
+
+    $loggedInUser = $_SESSION['username'];
 
     $age = strip_tags((isset($_POST["age"]) && is_numeric($_POST["age"])) ? $_POST["age"] : "");
 
-    $host = "devweb2018.cis.strath.ac.uk";
-    $user = "wjb15159";
-    $pass = "vahm0Iez4eex";
-    $dbname = "wjb15159";
-    $conn = new mysqli($host, $user, $pass, $dbname);
-
-    if($conn->connect_error) {
-        die("Connection failed".$conn->connect_error);
-    }
-
-
-    //TODO : check username that is logged in and update age for that entry
-
-    $sql = "UPDATE user_score SET age='$age' WHERE username='$username'";
+    $sql = "UPDATE user_score SET age='$age' WHERE username='$loggedInUser'";
 
     if($conn->query($sql) === TRUE) {
-        echo "<p>You have successfully submitted your age.</p>";
+        echo "<script>
+            alert('You have successfully submitted your answer!');
+            window.location.href='ability.php';
+            </script>";
+        exit();
     }
 
     ?>
+
+
 
 </form>
 </body>
