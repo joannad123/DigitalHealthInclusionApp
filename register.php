@@ -19,10 +19,16 @@
 
         <p><input type = "submit" name="submit"></p>
 
-        <h2> Or if you already have an account, go to the login page </h2>
+        <p><h2> If you already have an account, click go to login<br>
+                If you'd like a tutorial on logging in/registering, click go to tutorial</h2></p>
 
         <p><input type ="button" value="Go To Login" id="loginBtn"
-                  onclick="window.location = 'login.php'"/></p>
+                  onclick="window.location = 'login.php'"/>
+
+            <input type ="button" value="Go To Tutorial" id="tutBtn"
+                   onclick="window.location = 'loginTutorial.php'"/></p>
+
+
 
     </div>
 
@@ -33,11 +39,11 @@
     $username = strip_tags((isset($_POST["username"]) ? $_POST["username"] : ""));
     $password = (isset($_POST["password"]) ? ($_POST["password"]) : "");
 
-//    TODO : Fix positioning, possibly have as alert
     if(($username != "") && checkUsername($conn, $username)){
         $username = "";
-        $usernameError = "There is already an account associated with that username, please choose another one.";
-        echo "<p id='error'>".$usernameError."</p>";
+        echo "<script>
+        alert('There is already an account associated with that username, please choose another one.');
+        </script>";
     }
 
     $sql = "";
