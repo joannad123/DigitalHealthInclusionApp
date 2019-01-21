@@ -11,7 +11,7 @@ p {
     text-align: left;
 }
 
-#beginBtn, #loginBtn, #tutBtn {
+#beginBtn, #loginBtn, #tutBtn, #optionsBtn{
     /*position: absolute;*/
     top : 55%;
     font-size: large;
@@ -101,7 +101,111 @@ p #slides {
     font-size: large;
 }
 
-/*p #slideInfo {*/
-    /*position: center;*/
-/*}*/
+
+
+
+
+
+
+
+/*NAVBAR STUFF*/
+#navbar{
+    margin:0 auto;
+}
+
+#navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: lightblue;
+    text-align: center;
+    color: lightpink;
+    font-size: 150%;
+
+}
+
+
+#navbar li {
+    display: inline-block;
+    margin-right: -8px;
+    width: 15%;
+    font-family: Arial;
+
+
+}
+
+#navbar a {
+
+    display: block;
+    color: black;
+    /*text-shadow:*/
+    /*-1px -1px 0 white,*/
+    /*1px -1px 0 white,*/
+    /*-1px 1px 0 white,*/
+    /*1px 1px 0 white;*/
+    text-align: left;
+    text-decoration: none;
+    padding: 1rem;
+    font-size: 100%;
+    text-align: center;
+
+}
+
+#navbar a:hover {
+    background-color: lightpink;
+}
+
+.dropbtn {
+    font-family: inherit;
+
+    background-color: transparent;
+    /*text-shadow:*/
+    /*-1px -1px 0 white,*/
+    /*1px -1px 0 white,*/
+    /*-1px 1px 0 white,*/
+    /*1px 1px 0 white;*/
+    padding: 16px;
+    font-size: 100%;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+    width: 100%;
+
+
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: lightpink;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: lightpink;
+}
+
 
