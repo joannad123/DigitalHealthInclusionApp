@@ -27,6 +27,10 @@
 
     session_start();
 
+    if(empty($_SESSION)) {
+        header("Location: register.php");
+    }
+
     $loggedInUser = $_SESSION['username'];
 
     $age = strip_tags((isset($_POST["age"]) && is_numeric($_POST["age"])) ? $_POST["age"] : "");

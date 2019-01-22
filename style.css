@@ -1,18 +1,20 @@
 h1, h2 {
     font-family: Arial;
+    text-align: center;
 }
 
 p {
     font-family: Arial;
     font-size: large;
+    text-align: center;
 }
 
 .button {
-    text-align: left;
+    text-align: center;
 }
 
 #beginBtn, #loginBtn, #tutBtn, #optionsBtn{
-    /*position: absolute;*/
+    text-align: center;
     top : 55%;
     font-size: large;
     width: 250px;
@@ -29,12 +31,13 @@ p {
     font-family: Arial;
 }
 
-input[type="submit"], #logout {
+input[type="submit"], #logout, input[type="button"] {
     font-family: Arial;
     font-size: large;
     width: 100px;
     height:25px;
 }
+
 
 #click {
     font-size: large;
@@ -43,8 +46,16 @@ input[type="submit"], #logout {
     font-family: Arial;
 }
 
+.register, .login, .age, .ability, .frequency, .results {
+    text-align: center;
+    font-family: Arial;
+    font-size: large;
+}
 
-
+input[type="radio"]{
+    font-family: Arial;
+    font-size: large;
+}
 
 
 
@@ -117,9 +128,9 @@ p #slides {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    background-color: lightblue;
+    background-color: lightpink;
     text-align: center;
-    color: lightpink;
+    color: black;
     font-size: 150%;
 
 }
@@ -208,4 +219,23 @@ p #slides {
     background-color: lightpink;
 }
 
+
+
+
+
+/*QUIZ STUFF*/
+
+.quiz {
+    text-align: center;
+}
+
+.quiz label {
+    font-family: Arial;
+    font-size: large;
+}
+
+#after_submit{
+    text-align: center;
+    visibility: hidden;
+}
 

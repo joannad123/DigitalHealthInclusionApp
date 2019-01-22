@@ -28,6 +28,10 @@ include ("config.php");
 
 session_start();
 
+if(empty($_SESSION)) {
+    header("Location: register.php");
+}
+
 $loggedInUser = $_SESSION['username'];
 
 

@@ -27,9 +27,6 @@
 
             <input type ="button" value="Go To Tutorial" id="tutBtn"
                    onclick="window.location = 'loginTutorial.php'"/></p>
-
-
-
     </div>
 
     <?php
@@ -49,7 +46,7 @@
     $sql = "";
 
     if($username != "" && $password != "") {
-        $sql = "INSERT INTO `user_score` (`username`, `password`, `age`, `ability`, `frequency`, `score`) VALUES ('$username', '$password', '30', '1', '2', '3');";
+        $sql = "INSERT INTO `user_score` (`username`, `password`, `age`, `ability`, `frequency`, `score`, `logincount`) VALUES ('$username', '$password', '30', '1', '2', '3', '0');";
         if ($conn->query($sql) === TRUE) {
             echo "<script>
         alert('Account created successfully, now login');

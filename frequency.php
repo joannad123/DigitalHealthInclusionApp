@@ -34,6 +34,10 @@ include("config.php");
 
 session_start();
 
+if (empty($_SESSION)) {
+    header("Location: register.php");
+}
+
 $loggedInUser = $_SESSION['username'];
 
 $frequency = "";
@@ -69,7 +73,7 @@ if ($conn->query($sql) === TRUE) {
                 $sqlUpdate = "UPDATE user_score SET score='2' WHERE username='$loggedInUser'";
                 $resultUpdate = $conn->query($sqlUpdate);
                 echo "<script>
-                    alert('You have unlocked the advanced version of the app! First condition');
+                    alert('You have unlocked the advanced version of the app!');
                     window.location.href='advancedMenu.php';
                     </script>";
             }
@@ -90,20 +94,22 @@ if ($conn->query($sql) === TRUE) {
                 $sqlUpdate = "UPDATE user_score SET score='2' WHERE username='$loggedInUser'";
                 $resultUpdate = $conn->query($sqlUpdate);
                 echo "<script>
-                    alert('You have unlocked the advanced version of the app! Second condition');
+                    alert('You have unlocked the advanced version of the app!');
                     window.location.href='advancedMenu.php';
                     </script>";
-            } else {
-                //if any other condition
-                $sqlUpdate = "UPDATE user_score SET score='1' WHERE username='$loggedInUser'";
-                $resultUpdate = $conn->query($sqlUpdate);
-                echo "<script>
+
+            }
+        } else {
+            //if any other condition
+            $sqlUpdate = "UPDATE user_score SET score='1' WHERE username='$loggedInUser'";
+            $resultUpdate = $conn->query($sqlUpdate);
+            echo "<script>
                     alert('You have unlocked the basic version of the app!');
                     window.location.href='basicMenu.php';
                     </script>";
-            }
         }
     }
+
 }
 
 ?>
