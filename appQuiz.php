@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Quiz</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="previous.js"></script>
 </head>
 <body>
 <h1> App Quiz! </h1>
@@ -33,7 +34,8 @@
 
 
         <br>
-        <input id = "button" type = "submit" value = "Submit" >
+        <input type = "button" value = "Previous" onclick="goBack()" >
+        <input name = "button" type = "submit" value = "Submit" >
         <br>
 
     </div>
@@ -41,6 +43,16 @@
 
 
 <?php
+
+include ("config.php");
+
+session_start();
+
+if(empty($_SESSION)) {
+    header("Location: register.php");
+}
+
+$loggedInUser = $_SESSION['username'];
 
 $answer1 = "";
 $answer2 = "";
@@ -74,6 +86,23 @@ if ($answer4 == "ans2") { $totalCorrect++; }
 
 echo "<div class='results'>$totalCorrect / 4 correct</div>";
 
+if (isset($_POST['button'])) {
+
+    if ($totalCorrect == 4) {
+        $sqlFull = "UPDATE user_score SET quizscore = quizscore + 1 WHERE username='$loggedInUser'";
+    } else {
+        echo "<script>
+            alert('Not quite full marks, try again!');
+            </script>";
+    }
+
+    if ($conn->query($sqlFull) === TRUE) {
+        echo "<script>
+            alert('You have scored full marks, well done!');
+            </script>";
+        exit();
+    }
+}
 ?>
 
 </body>
