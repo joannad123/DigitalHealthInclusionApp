@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <title>Logout</title>
     <link rel="stylesheet" href="style.css">
+    <script src="previous.js"></script>
 </head>
 <body>
 <form name = "logout" method="post">
 <h1>Are you sure you want to logout?</h1>
 
     <p><button name="logout" type="submit" value="yes" id="logout">Yes</button></p>
-
+    <p><input type ="button" value="No" id="logout" onclick="goBack()"/></p>
     <?php
 
         if(isset($_POST['logout'])){

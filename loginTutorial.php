@@ -12,6 +12,15 @@
 <div class="slideshow-container">
 
     <div class="mySlides" style="display: block;">
+        <p id="slides"><h1>What is a login?</h1></p>
+        <p id="slides">Logins are used to identify users.</p>
+        <p id="slides">It involves storing your username and password in a database.</p>
+        <p id="slides">It means if you want to use the app frequently, your settings etc are stored.</p>
+        <p id="slides">For example, in this app if you logout and log back in your quiz scores are still the same<br>
+                        because they have been saved.</p>
+    </div>
+
+    <div class="mySlides">
         <p id="slides"><h1>What is a username?</h1></p>
         <p id="slides">The name given to a user on a computer.</p>
         <p id="slides">An example of a username for someone with the name John Smith would be :</p>

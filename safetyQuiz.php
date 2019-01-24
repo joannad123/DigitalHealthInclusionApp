@@ -17,7 +17,8 @@
         <input type = "radio" id = "2" name = "Q1" value = "ans2"> <label for="2">Your usage</label><br>
         <input type = "radio" id = "3" name = "Q1" value = "ans3"> <label for="3">How much you pay for your broadband</label><br>
 
-        <p><b>2.What does this padlock icon before a websites URL mean?</b></p>
+        <p><b>2.What does this padlock icon before a websites web address mean?</b></p>
+        <p><img src="padlock.png"></p>
         <input type = "radio" id = "4" name = "Q2" value = "ans1"> <label for="4">The website requires a password to access</label><br>
         <input type = "radio" id = "5" name = "Q2" value = "ans2"> <label for="5">The website is secure</label><br>
         <input type = "radio" id = "6" name = "Q2" value = "ans3"> <label for="6">The website is unsafe</label><br>
@@ -33,7 +34,7 @@
         <input type = "radio" id = "12" name = "Q4" value = "ans3"> <label for="12">Never use it again</label><br>
 
         <br>
-        <input type = "button" value = "Previous" onclick="goBack()" >
+        <input type = "button" value = "Previous" onclick="window.location = 'quizzes.php'" >
         <input name = "button" type = "submit" value = "Submit" >
         <br>
 
@@ -88,7 +89,7 @@ echo "<div class='results'>$totalCorrect / 4 correct</div>";
 if (isset($_POST['button'])) {
 
     if ($totalCorrect == 4) {
-        $sqlFull = "UPDATE user_score SET quizscore = quizscore + 1 WHERE username='$loggedInUser'";
+        $sqlFull = "UPDATE user_score SET safetyquiz = safetyquiz + 1 WHERE username='$loggedInUser'";
     } else {
         echo "<script>
             alert('Not quite full marks, try again!');
@@ -102,6 +103,7 @@ if (isset($_POST['button'])) {
         exit();
     }
 }
+
 
 
 ?>

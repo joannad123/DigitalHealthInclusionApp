@@ -1,4 +1,4 @@
 "use strict";
 function goBack() {
-    window.history.back();
+    history.go(-1);
 }

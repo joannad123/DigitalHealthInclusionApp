@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Please enter a username and password</h1>
+<h1>Please choose a username and password<br>
+    if this is your first time using the app</h1>
 
 <form name = "register" method="post">
 
@@ -46,7 +47,7 @@
     $sql = "";
 
     if($username != "" && $password != "") {
-        $sql = "INSERT INTO `user_score` (`username`, `password`, `age`, `ability`, `frequency`, `score`, `logincount`) VALUES ('$username', '$password', '30', '1', '2', '3', '0');";
+        $sql = "INSERT INTO `user_score` (`username`, `password`, `age`, `ability`, `frequency`, `score`, `logincount`, `loginquiz`, `safetyquiz`, `appquiz`) VALUES ('$username', '$password', '0', '0', '0', '0', '0', '0', '0', '0');";
         if ($conn->query($sql) === TRUE) {
             echo "<script>
         alert('Account created successfully, now login');
