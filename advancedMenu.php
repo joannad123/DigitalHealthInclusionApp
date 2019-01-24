@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Advanced Menu</title>
     <link rel="stylesheet" href="style.css">
+    <script src="slideshow.js"></script>
 </head>
 <body>
 
@@ -46,6 +47,18 @@
     </ul>
 </div>
 
+<div class="slideshow-container">
+
+    <div class="mySlides" style="display: block;">
+        <img src="digihealth.jpg"/>
+    </div>
+    <div class="mySlides">
+        <img src="digitalinc.png"/>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
 
 <?php
 

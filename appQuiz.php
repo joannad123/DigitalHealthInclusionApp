@@ -34,7 +34,7 @@
 
 
         <br>
-        <input type = "button" value = "Previous" onclick="goBack()" >
+        <input type = "button" value = "Previous" onclick="window.location = 'quizzes.php'" >
         <input name = "button" type = "submit" value = "Submit" >
         <br>
 
@@ -89,7 +89,7 @@ echo "<div class='results'>$totalCorrect / 4 correct</div>";
 if (isset($_POST['button'])) {
 
     if ($totalCorrect == 4) {
-        $sqlFull = "UPDATE user_score SET quizscore = quizscore + 1 WHERE username='$loggedInUser'";
+        $sqlFull = "UPDATE user_score SET appquiz = appquiz + 1 WHERE username='$loggedInUser'";
     } else {
         echo "<script>
             alert('Not quite full marks, try again!');
@@ -103,6 +103,7 @@ if (isset($_POST['button'])) {
         exit();
     }
 }
+
 ?>
 
 </body>

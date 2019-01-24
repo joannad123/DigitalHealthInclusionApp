@@ -54,53 +54,38 @@ if ($conn->query($sql) === TRUE) {
             alert('You have successfully submitted your answer!');
             </script>";
 
-    $sqlUsersAge = "SELECT age FROM `user_score` WHERE `username` = '$loggedInUser' AND `age` > '65'";
-    $resultAge = $conn->query($sqlUsersAge);
+    $sqlUsersAbility1 = "SELECT ability FROM `user_score` WHERE `username` = '$loggedInUser' AND `ability` = '1'";
+    $resultAbility1 = $conn->query($sqlUsersAbility1);
 
-    if ($resultAge->num_rows > 0) {
-        //if user is > 65
-        $sqlUsersAbility = "SELECT ability FROM `user_score` WHERE `username` = '$loggedInUser' AND `ability` = '3'";
-        $resultAbility = $conn->query($sqlUsersAbility);
-
-        if ($resultAbility->num_rows > 0) {
-
-            $sqlUsersFrequency = "SELECT frequency FROM `user_score` WHERE `username` = '$loggedInUser' AND `frequency` > '1'";
-            $resultFrequency = $conn->query($sqlUsersFrequency);
-
-            if ($resultFrequency->num_rows > 0) {
-                //if conditions met
-                //if user > 65 AND ability=3 AND frequency>1
-                $sqlUpdate = "UPDATE user_score SET score='2' WHERE username='$loggedInUser'";
-                $resultUpdate = $conn->query($sqlUpdate);
-                echo "<script>
-                    alert('You have unlocked the advanced version of the app!');
-                    window.location.href='advancedMenu.php';
+    if ($resultAbility1->num_rows > 0) {
+        $sqlUpdate = "UPDATE user_score SET score='1' WHERE username='$loggedInUser'";
+        $resultUpdate = $conn->query($sqlUpdate);
+        echo "<script>
+                    alert('You have unlocked the basic version of the app!');
+                    window.location.href='basicMenu.php';
                     </script>";
-            }
-        }
-    } else {
-        //user is < 65
-        $sqlUsersAbility = "SELECT ability FROM `user_score` WHERE `username` = '$loggedInUser' AND `ability` > '1'";
-        $resultAbility = $conn->query($sqlUsersAbility);
+    }
 
-        if ($resultAbility->num_rows > 0) {
+    $sqlUsersFrequency = "SELECT frequency FROM `user_score` WHERE `username` = '$loggedInUser' AND `frequency` = '1'";
+    $resultFrequency = $conn->query($sqlUsersFrequency);
 
-            $sqlUsersFrequency = "SELECT frequency FROM `user_score` WHERE `username` = '$loggedInUser' AND `frequency` > '2'";
-            $resultFrequency = $conn->query($sqlUsersFrequency);
-
-            if ($resultFrequency->num_rows > 0) {
-                //if conditions met
-                //if user < 65 AND ability>1 AND frequency>2
-                $sqlUpdate = "UPDATE user_score SET score='2' WHERE username='$loggedInUser'";
-                $resultUpdate = $conn->query($sqlUpdate);
-                echo "<script>
-                    alert('You have unlocked the advanced version of the app!');
-                    window.location.href='advancedMenu.php';
+    if ($resultFrequency->num_rows > 0) {
+        $sqlUpdate = "UPDATE user_score SET score='1' WHERE username='$loggedInUser'";
+        $resultUpdate = $conn->query($sqlUpdate);
+        echo "<script>
+                    alert('You have unlocked the basic version of the app!');
+                    window.location.href='basicMenu.php';
                     </script>";
+    }
 
-            }
-        } else {
-            //if any other condition
+    $sqlUsersAbility3 = "SELECT ability FROM `user_score` WHERE `username` = '$loggedInUser' AND `ability` = '3'";
+    $resultAbility3 = $conn->query($sqlUsersAbility3);
+
+    if ($resultAbility3->num_rows > 0) {
+        $sqlUsersFreq3 = "SELECT frequency FROM `user_score` WHERE `username` = '$loggedInUser' AND `frequency` < '3'";
+        $resultFreq3 = $conn->query($sqlUsersFreq3);
+
+        if ($resultFreq3->num_rows > 0) {
             $sqlUpdate = "UPDATE user_score SET score='1' WHERE username='$loggedInUser'";
             $resultUpdate = $conn->query($sqlUpdate);
             echo "<script>
@@ -110,8 +95,70 @@ if ($conn->query($sql) === TRUE) {
         }
     }
 
-}
+    $sqlUsersAbility2 = "SELECT ability FROM `user_score` WHERE `username` = '$loggedInUser' AND `ability` > '2'";
+    $resultAbility2 = $conn->query($sqlUsersAbility2);
 
+    if ($resultAbility2->num_rows > 0) {
+        $sqlUpdate = "UPDATE user_score SET score='2' WHERE username='$loggedInUser'";
+        $resultUpdate = $conn->query($sqlUpdate);
+        echo "<script>
+                    alert('You have unlocked the advanced version of the app!');
+                    window.location.href='advancedMenu.php';
+                    </script>";
+    }
+
+    $sqlUsersAgeO = "SELECT age FROM `user_score` WHERE `username` = '$loggedInUser' AND `age` > '65'";
+    $resultAgeO = $conn->query($sqlUsersAgeO);
+
+    if ($resultAgeO->num_rows > 0) {
+        $sqlUsersAbilityE2 = "SELECT ability FROM `user_score` WHERE `username` = '$loggedInUser' AND `ability` = '2'";
+        $resultAbilityE2 = $conn->query($sqlUsersAbilityE2);
+
+        if ($resultAbilityE2->num_rows > 0) {
+            $sqlUpdate = "UPDATE user_score SET score='1' WHERE username='$loggedInUser'";
+            $resultUpdate = $conn->query($sqlUpdate);
+            echo "<script>
+                    alert('You have unlocked the basic version of the app!');
+                    window.location.href='basicMenu.php';
+                    </script>";
+        }
+    }
+
+    $sqlUsersAgeU = "SELECT age FROM `user_score` WHERE `username` = '$loggedInUser' AND `age` < '65'";
+    $resultAgeU = $conn->query($sqlUsersAgeU);
+
+    if ($resultAgeU->num_rows > 0) {
+        $sqlUsersFreq3 = "SELECT frequency FROM `user_score` WHERE `username` = '$loggedInUser' AND `frequency` < '3'";
+        $resultFreq3 = $conn->query($sqlUsersFreq3);
+
+        if ($resultFreq3->num_rows > 0) {
+            $sqlUpdate = "UPDATE user_score SET score='1' WHERE username='$loggedInUser'";
+            $resultUpdate = $conn->query($sqlUpdate);
+            echo "<script>
+                    alert('You have unlocked the basic version of the app!');
+                    window.location.href='basicMenu.php';
+                    </script>";
+        }
+    }
+
+    $sqlUsersAgeU = "SELECT age FROM `user_score` WHERE `username` = '$loggedInUser' AND `age` < '65'";
+    $resultAgeU = $conn->query($sqlUsersAgeU);
+
+    if ($resultAgeU->num_rows > 0) {
+        $sqlUsersFreq2 = "SELECT frequency FROM `user_score` WHERE `username` = '$loggedInUser' AND `frequency` > '2'";
+        $resultFreq2 = $conn->query($sqlUsersFreq2);
+
+        if ($resultFreq2->num_rows > 0) {
+            $sqlUpdate = "UPDATE user_score SET score='2' WHERE username='$loggedInUser'";
+            $resultUpdate = $conn->query($sqlUpdate);
+            echo "<script>
+                    alert('You have unlocked the advanced version of the app!');
+                    window.location.href='advancedMenu.php';
+                    </script>";
+
+        }
+    }
+}
 ?>
 
 </body>

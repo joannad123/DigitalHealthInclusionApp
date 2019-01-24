@@ -6,8 +6,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Please provide a username or<br>
-    login to an existing account</h1>
+<h1>Please enter your username and password</h1>
 
 <form name="login" method="post">
 
