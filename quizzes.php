@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Quiz Menu</title>
     <link rel="stylesheet" href="style.css">
+    <script src="previous.js"></script>
 </head>
 <body>
 <h1>Please choose which quiz you would like to try first<br>
@@ -24,6 +25,9 @@
 
     <p><input type ="button" value="Logout" id="logout"
               onclick="window.location = 'logout.php'"/></p>
+
+    <p><input type="button" value="Previous" onclick="goBack()"></p>
+
 </div>
 
 <?php

@@ -1,6 +1,10 @@
-h1, h2 {
+h1, h2 , h3{
     font-family: Arial;
     text-align: center;
+}
+
+body {
+    background-color: deepskyblue;
 }
 
 p {
@@ -122,11 +126,10 @@ p #slides {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    background-color: lightpink;
+    background-color: deepskyblue;
     text-align: center;
     color: black;
     font-size: 150%;
-
 }
 
 

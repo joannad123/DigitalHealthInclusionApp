@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="style.css">
+    <script src="previous.js"></script>
 </head>
 <body>
 <h1>Please enter your username and password</h1>
@@ -18,7 +19,7 @@
         <input type="password" name="password">
 
         <p><input type="submit" name="submit"></p>
-
+        <input type="button" value="Previous" onclick="goBack()">
 
     </div>
 

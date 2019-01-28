@@ -7,35 +7,33 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-<h1> Login Quiz! </h1>
+<h1> Spot the Danger Quiz! </h1>
 
 <form id="Quiz" name="Quiz" method="post">
     <div class="quiz">
 
-        <p><b>1.Choose the username that would fit this criteria :<br>
-                6-8 characters, mix of upper and lower case letters and at least one number and special character.</b>
-        </p>
-        <input type="radio" id="1" name="Q1" value="ans1"> <label for="1">john8!</label><br>
-        <input type="radio" id="2" name="Q1" value="ans2"> <label for="2">Ian'4</label><br>
-        <input type="radio" id="3" name="Q1" value="ans3"> <label for="3">S@ndra-</label><br>
+        <p><b>1.What does it mean when this is next to the URL of a webpage?</b></p>
+        <p><img src="notsecure.png"></p>
+        <input type="radio" id="1" name="Q1" value="ans1"> <label for="1">The webpage you are on is safe</label><br>
+        <input type="radio" id="2" name="Q1" value="ans2"> <label for="2">The webpage you are on is unsafe</label><br>
+        <input type="radio" id="3" name="Q1" value="ans3"> <label for="3">You cannot leave the webpage</label><br>
 
-        <p><b>2.Choose the most secure password.</b></p>
-        <input type="radio" id="4" name="Q2" value="ans1"> <label for="4">password123</label><br>
-        <input type="radio" id="5" name="Q2" value="ans2"> <label for="5">he110</label><br>
-        <input type="radio" id="6" name="Q2" value="ans3"> <label for="6">C@Nd1E!</label><br>
+        <p><b>2.What about this email shows it is a scam?</b></p>
+        <p><img src="scam.png"></p>
+        <input type="radio" id="4" name="Q2" value="ans1"> <label for="4">There is no official brand logo</label><br>
+        <input type="radio" id="5" name="Q2" value="ans2"> <label for="5">You would never be asked to verify your account straight from an email link</label><br>
+        <input type="radio" id="6" name="Q2" value="ans3"> <label for="6">All of the above</label><br>
 
-        <p><b>3.What should you always do after creating a new user account?</b></p>
-        <input type="radio" id="7" name="Q3" value="ans1"> <label for="7">Write your credentials on a bit of paper and
-            keep it in your wallet/purse</label><br>
-        <input type="radio" id="8" name="Q3" value="ans2"> <label for="8">Ensure you remember them and if you need to
-            take a note, make sure it's stored somewhere secure</label><br>
-        <input type="radio" id="9" name="Q3" value="ans3"> <label for="9">Forget them immediately that way no one can
-            hack you</label><br>
+        <p><b>3.Which of these WiFi networks is the safest to connect to?</b></p>
+        <p><img src="wifi.png"></p>
+        <input type="radio" id="7" name="Q3" value="ans1"> <label for="7">VM8978320</label><br>
+        <input type="radio" id="8" name="Q3" value="ans2"> <label for="8">BTWifi-with-FON</label><br>
+        <input type="radio" id="9" name="Q3" value="ans3"> <label for="9">Neither</label><br>
 
-        <p><b>4.What should you do after entering all required fields on a login page?</b></p>
-        <input type="radio" id="10" name="Q4" value="ans1"> <label for="10">Click the submit button</label><br>
-        <input type="radio" id="11" name="Q4" value="ans2"> <label for="11">Refresh the page</label><br>
-        <input type="radio" id="12" name="Q4" value="ans3"> <label for="12">Quit the page immediately</label><br>
+        <p><b>4.Which of these is NOT a way to be sure a website is safe?</b></p>
+        <input type="radio" id="10" name="Q4" value="ans1"> <label for="10">The URL starts with HTTPS</label><br>
+        <input type="radio" id="11" name="Q4" value="ans2"> <label for="11">The company who's website it is provide contact information</label><br>
+        <input type="radio" id="12" name="Q4" value="ans3"> <label for="12">You use it all the time</label><br>
 
         <br>
         <input type="button" value="Previous" onclick="goBack()">
@@ -57,8 +55,6 @@ if (empty($_SESSION)) {
 }
 
 $loggedInUser = $_SESSION['username'];
-
-$sqlFull = "";
 
 $answer1 = "";
 $answer2 = "";
@@ -86,7 +82,8 @@ $question2wrong = false;
 $question3wrong = false;
 $question4wrong = false;
 
-if ($answer1 == "ans3") {
+
+if ($answer1 == "ans2") {
     $totalCorrect++;
 } else {
     $question1wrong = true;
@@ -94,29 +91,27 @@ if ($answer1 == "ans3") {
 
 if ($answer2 == "ans3") {
     $totalCorrect++;
-}else {
+} else {
     $question2wrong = true;
 }
 
-if ($answer3 == "ans2") {
+if ($answer3 == "ans1") {
     $totalCorrect++;
-}else {
+} else {
     $question3wrong = true;
 }
 
-if ($answer4 == "ans1") {
+if ($answer4 == "ans3") {
     $totalCorrect++;
-}else {
+} else {
     $question4wrong = true;
 }
 
 echo "<div class='results'>$totalCorrect / 4 correct</div>";
 
-
 if (isset($_POST['button'])) {
 
     if ($totalCorrect == 4) {
-        $sqlFull = "UPDATE user_score SET loginquiz = loginquiz + 1 WHERE username='$loggedInUser'";
         echo "<script>
             alert('You have scored full marks, well done!');
             </script>";
@@ -125,7 +120,6 @@ if (isset($_POST['button'])) {
             alert('Not quite full marks, check the bottom of the page to see which questions you got wrong!');
             </script>";
     }
-
 
     if($question1wrong == true) {
         echo "<div class='results'>You got question 1 wrong </div>";
@@ -142,9 +136,10 @@ if (isset($_POST['button'])) {
     if($question4wrong == true) {
         echo "<div class='results'>You got question 4 wrong </div>";
     }
+
+
+
 }
-
-
 
 
 ?>

@@ -34,7 +34,7 @@
 
 
         <br>
-        <input type = "button" value = "Previous" onclick="window.location = 'quizzes.php'" >
+        <input type="button" value="Previous" onclick="goBack()">
         <input name = "button" type = "submit" value = "Submit" >
         <br>
 
@@ -75,14 +75,34 @@ if(isset($_POST['Q4'])) {
     $answer4 = $_POST['Q4'];
 }
 $totalCorrect = 0;
+$question1wrong = false;
+$question2wrong = false;
+$question3wrong = false;
+$question4wrong = false;
 
-if ($answer1 == "ans1") { $totalCorrect++; }
+if ($answer1 == "ans1") {
+    $totalCorrect++;
+} else {
+    $question1wrong = true;
+}
 
-if ($answer2 == "ans3") { $totalCorrect++; }
+if ($answer2 == "ans3") {
+    $totalCorrect++;
+} else {
+    $question2wrong = true;
+}
 
-if ($answer3 == "ans1") { $totalCorrect++; }
+if ($answer3 == "ans1") {
+    $totalCorrect++;
+} else {
+    $question3wrong = true;
+}
 
-if ($answer4 == "ans2") { $totalCorrect++; }
+if ($answer4 == "ans2") {
+    $totalCorrect++;
+}else {
+    $question4wrong = true;
+}
 
 echo "<div class='results'>$totalCorrect / 4 correct</div>";
 
@@ -90,17 +110,30 @@ if (isset($_POST['button'])) {
 
     if ($totalCorrect == 4) {
         $sqlFull = "UPDATE user_score SET appquiz = appquiz + 1 WHERE username='$loggedInUser'";
-    } else {
-        echo "<script>
-            alert('Not quite full marks, try again!');
-            </script>";
-    }
-
-    if ($conn->query($sqlFull) === TRUE) {
         echo "<script>
             alert('You have scored full marks, well done!');
             </script>";
-        exit();
+    } else {
+        echo "<script>
+            alert('Not quite full marks, check the bottom of the page to see which questions you got wrong!');
+            </script>";
+    }
+
+
+    if($question1wrong == true) {
+        echo "<div class='results'>You got question 1 wrong </div>";
+    }
+
+    if($question2wrong == true) {
+        echo "<div class='results'>You got question 2 wrong </div>";
+    }
+
+    if($question3wrong == true) {
+        echo "<div class='results'>You got question 3 wrong </div>";
+    }
+
+    if($question4wrong == true) {
+        echo "<div class='results'>You got question 4 wrong </div>";
     }
 }
 
