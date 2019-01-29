@@ -13,19 +13,19 @@
     <div class="quiz">
 
         <p><b>1.What does it mean when this is next to the URL of a webpage?</b></p>
-        <p><img src="notsecure.png"></p>
+        <p><img src="images/notsecure.png" alt="Not secure"></p>
         <input type="radio" id="1" name="Q1" value="ans1"> <label for="1">The webpage you are on is safe</label><br>
         <input type="radio" id="2" name="Q1" value="ans2"> <label for="2">The webpage you are on is unsafe</label><br>
         <input type="radio" id="3" name="Q1" value="ans3"> <label for="3">You cannot leave the webpage</label><br>
 
         <p><b>2.What about this email shows it is a scam?</b></p>
-        <p><img src="scam.png"></p>
+        <p><img src="images/scam.png" alt="Scam email"></p>
         <input type="radio" id="4" name="Q2" value="ans1"> <label for="4">There is no official brand logo</label><br>
         <input type="radio" id="5" name="Q2" value="ans2"> <label for="5">You would never be asked to verify your account straight from an email link</label><br>
         <input type="radio" id="6" name="Q2" value="ans3"> <label for="6">All of the above</label><br>
 
         <p><b>3.Which of these WiFi networks is the safest to connect to?</b></p>
-        <p><img src="wifi.png"></p>
+        <p><img src="images/wifi.png" alt="Wifi"></p>
         <input type="radio" id="7" name="Q3" value="ans1"> <label for="7">VM8978320</label><br>
         <input type="radio" id="8" name="Q3" value="ans2"> <label for="8">BTWifi-with-FON</label><br>
         <input type="radio" id="9" name="Q3" value="ans3"> <label for="9">Neither</label><br>

@@ -14,16 +14,15 @@
             <div class="dropdown">
                 <button class="dropbtn">Digital Skills Quizzes</button>
                 <div class="dropdown-content">
-                    <a href="loginQuiz.php">Login Quiz</a>
-                    <a href="safetyQuiz.php">Internet Safety Quiz</a>
-                    <a href="appQuiz.php">App Quiz</a>
+                    <a href="abbQuiz.php">Abbreviation Quiz</a>
+                    <a href="spotQuiz.php">Spot the Danger Quiz</a>
                 </div>
             </div></li>
         <li>
             <div class="dropdown">
                 <button class="dropbtn">Cancer</button>
                 <div class="dropdown-content">
-                    <a href="logout.php">Recommended Sites</a>
+                    <a href="cancerChoice.php">Recommended Sites</a>
                     <a href="logout.php">Category 2</a>
                     <a href="logout.php">Category 3</a>
                 </div>
@@ -47,18 +46,31 @@
     </ul>
 </div>
 
-<div class="slideshow-container">
-
-    <div class="mySlides" style="display: block;">
-        <img src="digihealth.jpg"/>
+<div id="advSlideshow">
+    <div>
+        <img src="images/digital.png" alt="Digital"/>
     </div>
-    <div class="mySlides">
-        <img src="digitalinc.png"/>
+    <div>
+        <img src="images/digihealth.jpg" alt="Digital health"/>
     </div>
-
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div>
+        <img src="images/digitalinc.png" alt="Digital inclusion"/>
+    </div>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script>
+    $("#advSlideshow > div:gt(0)").hide();
+
+    setInterval(function() {
+        $('#advSlideshow > div:first')
+            .fadeOut(1500)
+            .next()
+            .fadeIn(1500)
+            .end()
+            .appendTo('#advSlideshow');
+    }, 4500);
+</script>
 
 <?php
 

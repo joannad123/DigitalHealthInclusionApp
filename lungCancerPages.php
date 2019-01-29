@@ -7,7 +7,7 @@
     <script src="previous.js"></script>
 </head>
 <body>
-<h1>Listed below are websites which offer support for anyone affected in any way by breast cancer.</h1>
+<h1>Listed below are websites which offer support for anyone affected in any way by lung cancer.</h1>
 <h2>They are ranked in order of usability, with the most user friendly page at the top.</h2>
 <h3>You can view the criteria used to rank these pages by clicking the previous button and selecting<br>
     usability chart from the menu.</h3>
@@ -21,25 +21,24 @@
             <th>Logo</th>
         </tr>
         <tr>
-            <td>1.Breast Cancer Care</td>
-            <td>Provides information and support regarding breast cancer</td>
-            <td><a href="https://www.breastcancercare.org.uk/information-support">Click here to visit</a></td>
-            <td><img src="images/bCancer1.png" alt="Breast Cancer Care"></td>
+            <td>1.British Lung Foundation</td>
+            <td>Provides information and support regarding lung cancer</td>
+            <td><a href="https://www.blf.org.uk/support-for-you/lung-cancer">Click here to visit</a></td>
+            <td><img src="images/lCancer1.png" alt="British Lung Foundation"></td>
         </tr>
         <tr>
             <td>2.Macmillan Cancer Support</td>
             <td>Provides information and support regarding all types of cancer</td>
-            <td><a href="https://www.macmillan.org.uk/information-and-support/breast-cancer">Click here to visit</a></td>
+            <td><a href="https://www.macmillan.org.uk/information-and-support/lung-cancer">Click here to visit</a></td>
             <td><img src="images/bCancer2.png" alt="Macmillan Cancer Support"></td>
         </tr>
         <tr>
-            <td>3.Breast Cancer Support</td>
-            <td>Provides information and support regarding breast cancer</td>
-            <td><a href="https://breastcancersupport.org.uk/">Click here to visit</a></td>
-            <td><img src="images/bCancer3.png" alt="Breast Cancer Support"></td>
+            <td>3.Roy Castle Lung Cancer Foundation</td>
+            <td>Provides information and support regarding lung cancer</td>
+            <td><a href="https://www.roycastle.org/">Click here to visit</a></td>
+            <td><img src="images/lCancer2.png" alt="Roy Castle Lung Cancer Foundation"></td>
         </tr>
     </table>
-
 
     <p><input type="button" value="Previous" onclick="goBack()"></p>
 
@@ -61,7 +60,6 @@ $loggedInUser = $_SESSION['username'];
 
 
 ?>
-
 
 </body>
 </html>

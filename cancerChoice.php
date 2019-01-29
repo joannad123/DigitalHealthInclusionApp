@@ -13,6 +13,9 @@
     <p><input type ="button" value="Breast Cancer Support Pages" id="optionsBtn"
               onclick="window.location = 'breastCancerPages.php'"/></p>
 
+    <p><input type ="button" value="Lung Cancer Support Pages" id="optionsBtn"
+              onclick="window.location = 'lungCancerPages.php'"/></p>
+
     <p><input type ="button" value="Usability Chart" id="optionsBtn"
               onclick="window.location = 'usability.php'"/></p>
 
