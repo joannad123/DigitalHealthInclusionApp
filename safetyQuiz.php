@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
     <link rel="stylesheet" href="style.css" />
     <script src="previous.js"></script>
@@ -110,34 +111,35 @@ if (isset($_POST['button'])) {
 
     if ($totalCorrect == 4) {
         $sqlFull = "UPDATE user_score SET safetyquiz = safetyquiz + 1 WHERE username='$loggedInUser'";
-        echo "<script>
+        if ($conn->query($sqlFull) === TRUE) {
+            echo "<script>
             alert('You have scored full marks, well done!');
             </script>";
-    } else {
-        echo "<script>
+        } else {
+            echo "<script>
             alert('Not quite full marks, check the bottom of the page to see which questions you got wrong!');
             </script>";
-    }
+        }
 
 
-    if($question1wrong == true) {
-        echo "<div class='results'>You got question 1 wrong </div>";
+        if ($question1wrong == true) {
+            echo "<div class='results'>You got question 1 wrong </div>";
+        }
+
+        if ($question2wrong == true) {
+            echo "<div class='results'>You got question 2 wrong </div>";
+        }
+
+        if ($question3wrong == true) {
+            echo "<div class='results'>You got question 3 wrong </div>";
+        }
+
+        if ($question4wrong == true) {
+            echo "<div class='results'>You got question 4 wrong </div>";
+        }
     }
 
-    if($question2wrong == true) {
-        echo "<div class='results'>You got question 2 wrong </div>";
-    }
-
-    if($question3wrong == true) {
-        echo "<div class='results'>You got question 3 wrong </div>";
-    }
-
-    if($question4wrong == true) {
-        echo "<div class='results'>You got question 4 wrong </div>";
-    }
 }
-
-
 
 ?>
 
