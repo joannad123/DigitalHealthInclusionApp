@@ -39,7 +39,7 @@
         <input type="radio" id="12" name="Q4" value="ans3"> <label for="12">Quit the page immediately</label><br>
 
         <br>
-        <input type="button" value="Previous" onclick="goBack()">
+        <input type="button" value="Previous" onclick="location.href='quizzes.php'"">
         <input name="button" type="submit" value="Submit">
         <br>
 
@@ -120,13 +120,16 @@ if (isset($_POST['button'])) {
         $sqlFull = "UPDATE user_score SET loginquiz = loginquiz + 1 WHERE username='$loggedInUser'";
         if ($conn->query($sqlFull) === TRUE) {
             echo "<script>
-            alert('You have scored full marks, well done!');
-            </script>";
-        } else {
-            echo "<script>
-            alert('Not quite full marks, check the bottom of the page to see which questions you got wrong!');
+            alert('You have scored full marks, well done! Now click the previous button at the bottom of the page to go back to the menu');
             </script>";
         }
+    }
+
+    if($totalCorrect != 4){
+        echo "<script>
+        alert('Not quite full marks, check the bottom of the page to see which questions you got wrong!');
+        </script>";
+    }
 
 
         if ($question1wrong == true) {
@@ -145,7 +148,6 @@ if (isset($_POST['button'])) {
             echo "<div class='results'>You got question 4 wrong </div>";
         }
 
-    }
 
 }
 

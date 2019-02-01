@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,10 +13,10 @@
 <form name = "register" method="post">
 
     <div class = "register">
-        <p>Username</p>
+        <p><u>Username</u></p>
         <input type = "text" name="username" >
 
-        <p>Password</p>
+        <p><u>Password</u></p>
         <input type = "password" name="password" >
 
         <p><input type = "submit" name="submit"></p>

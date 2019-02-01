@@ -35,7 +35,7 @@
 
 
         <br>
-        <input type="button" value="Previous" onclick="goBack()">
+        <input type="button" value="Previous" onclick="location.href='quizzes.php'"">
         <input name = "button" type = "submit" value = "Submit" >
         <br>
 
@@ -113,31 +113,35 @@ if (isset($_POST['button'])) {
         $sqlFull = "UPDATE user_score SET appquiz = appquiz + 1 WHERE username='$loggedInUser'";
         if ($conn->query($sqlFull) === TRUE) {
             echo "<script>
-            alert('You have scored full marks, well done!');
+            alert('You have scored full marks, well done! Now click the previous button at the bottom of the page to go back to the menu');
             </script>";
-        } else {
-            echo "<script>
-            alert('Not quite full marks, check the bottom of the page to see which questions you got wrong!');
-            </script>";
-        }
-
-
-        if ($question1wrong == true) {
-            echo "<div class='results'>You got question 1 wrong </div>";
-        }
-
-        if ($question2wrong == true) {
-            echo "<div class='results'>You got question 2 wrong </div>";
-        }
-
-        if ($question3wrong == true) {
-            echo "<div class='results'>You got question 3 wrong </div>";
-        }
-
-        if ($question4wrong == true) {
-            echo "<div class='results'>You got question 4 wrong </div>";
         }
     }
+
+    if($totalCorrect != 4){
+        echo "<script>
+        alert('Not quite full marks, check the bottom of the page to see which questions you got wrong!');
+        </script>";
+    }
+
+
+    if ($question1wrong == true) {
+        echo "<div class='results'>You got question 1 wrong </div>";
+    }
+
+    if ($question2wrong == true) {
+        echo "<div class='results'>You got question 2 wrong </div>";
+    }
+
+    if ($question3wrong == true) {
+        echo "<div class='results'>You got question 3 wrong </div>";
+    }
+
+    if ($question4wrong == true) {
+        echo "<div class='results'>You got question 4 wrong </div>";
+    }
+
+
 }
 
 ?>

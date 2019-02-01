@@ -40,6 +40,16 @@ input[type="submit"], #logout, input[type="button"] {
     font-size: large;
     width: 100px;
     height:25px;
+    border-radius: 12px;
+    border: 2px solid black;
+}
+
+input[type="text"], input[type="password"] {
+    border-radius: 12px;
+    font-family: Arial;
+    font-size: large;
+
+
 }
 
 

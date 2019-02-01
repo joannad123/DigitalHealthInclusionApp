@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="style.css">
     <script src="previous.js"></script>
@@ -12,14 +13,15 @@
 <form name="login" method="post">
 
     <div class="login">
-        <p>Username</p>
+        <p><u>Username</u></p>
         <input type="text" name="username">
 
-        <p>Password</p>
+        <p><u>Password</u></p>
         <input type="password" name="password">
 
+        <p><input type="button" value="Previous" onclick="goBack()"></p>
+
         <p><input type="submit" name="submit"></p>
-        <input type="button" value="Previous" onclick="goBack()">
 
     </div>
 

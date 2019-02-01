@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basic Menu</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -11,6 +12,9 @@
 
         <p><input type ="button" value="Digital Skills Quizzes" id="optionsBtn"
                   onclick="window.location = 'quizzes.php'"/></p>
+
+        <p><input type ="button" value="Digital Health Section" id="optionsBtn"
+              onclick="window.location = 'digitalHealth.php'"/></p>
 
         <p><input type ="button" value="Cancer Section" id="optionsBtn"
               onclick="window.location = 'cancerSection.php'"/></p>
