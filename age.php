@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Age</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,7 +13,7 @@
 
     <div class = "age">
 
-        <p>Age</p>
+        <p><u>Age</u></p>
         <input type = "number" name="age">
 
         <p><input type = "submit" name="submit"></p>

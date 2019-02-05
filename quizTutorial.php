@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Tutorial</title>
     <link rel="stylesheet" href="style.css">
     <script src="slideshow.js"></script>
+    <script src="previous.js"></script>
+
 </head>
 <body>
 <h1> Quiz Tutorial </h1>
@@ -31,19 +34,38 @@
     <div class="mySlides" >
         <p id="slides"><h1>Completed quiz</h1></p>
         <p id="slides">This is what your screen should look like once you have made all your choices.</p>
-        <p id="slides"><img src="loginquiz.png"></p>
+        <p id="slides"><img src="images/loginquiz.png" alt="Completed quiz"></p>
     </div>
 
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <a href="#" class="previous" onclick="plusSlides(-1)">&laquo; Previous</a>
+    <a href="#" class="next" onclick="plusSlides(1)">Next &raquo;</a>
 </div>
 
 <div>
 
     <p align="center"> Click the left and right arrows to navigate through the information.<br>
-        Once you are comfortable, click the button below to go to the quizzes page.</p>
+        Once you are comfortable, click the previous button below to go to the quizzes page.</p>
 
-    <p><input type ="button" value="Go To Quizzes" id="loginTutBtn"
-              onclick="window.location = 'quizzes.php'"/>
+    <p><input type="button" value="Previous" onclick="goBack()"></p>
+    <p><input type="button" value="Main Menu" onclick="location.href='basicMenu.php'"></p>
+
+
 </div>
 
+<?php
+
+include("config.php");
+
+session_start();
+
+if(empty($_SESSION)) {
+    header("Location: register.php");
+}
+
+$loggedInUser = $_SESSION['username'];
+
+
+?>
+
+</body>
+</html>

@@ -10,6 +10,8 @@
 
 </head>
 <body>
+<form id="prescription" name="prescription" method="post">
+
 <h1> Order Prescription Tutorial </h1>
 
 <div class="slideshow-container">
@@ -61,8 +63,8 @@
     </div>
 
 
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <a href="#" class="previous" onclick="plusSlides(-1)">&laquo; Previous</a>
+    <a href="#" class="next" onclick="plusSlides(1)">Next &raquo;</a>
 </div>
 
 <div>
@@ -71,8 +73,11 @@
 
     <p><input type="button" value="Previous" onclick="goBack()"></p>
 
-</div>
+    <p><input name="button" type="submit" value="Main Menu"></p>
 
+
+</div>
+</form>
 <?php
 
 include("config.php");
@@ -85,6 +90,18 @@ if(empty($_SESSION)) {
 
 $loggedInUser = $_SESSION['username'];
 
+if (isset($_POST['button'])) {
+
+    $sqlUsersScore = "SELECT score FROM `user_score` WHERE `username` = '$loggedInUser' AND `score` = '1'";
+    $resultScore = $conn->query($sqlUsersScore);
+
+    if ($resultScore->num_rows > 0) {
+        //redirect to basic menu
+        header("Location: basicMenu.php");
+    } else {
+        header("Location: advancedMenu.php");
+    }
+}
 
 ?>
 

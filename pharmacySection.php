@@ -17,7 +17,7 @@
     <p><input type ="button" value="Prescription Tutorial" id="optionsBtn"
               onclick="window.location = 'prescriptionTutorial.php'"/></p>
 
-    <p><input type="button" value="Previous" onclick="goBack()"></p>
+    <p><input type="button" value="Main Menu" onclick="location.href='basicMenu.php'"></p>
 
     <p><input type ="button" value="Logout" id="logout"
               onclick="window.location = 'logout.php'"/></p>

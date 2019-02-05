@@ -1,4 +1,4 @@
-h1, h2 , h3{
+h1, h2, h3 {
     font-family: Arial;
     text-align: center;
 }
@@ -15,49 +15,54 @@ p {
 
 .button {
     text-align: center;
+    cursor: pointer;
 }
 
-#beginBtn, #loginBtn, #tutBtn, #optionsBtn{
+#beginBtn, #loginBtn, #tutBtn, #optionsBtn {
     text-align: center;
-    top : 55%;
+    top: 55%;
     font-size: large;
     width: 250px;
-    height:50px;
+    height: 50px;
     font-family: Arial;
+    cursor: pointer;
 }
 
 #loginTutBtn {
-    margin:auto;
-    display:block;
+    margin: auto;
+    display: block;
     font-size: large;
     width: 250px;
-    height:50px;
+    height: 50px;
     font-family: Arial;
+    cursor: pointer;
+
 }
 
-input[type="submit"], #logout, input[type="button"] {
+input[type="submit"], #logout, input[type="button"], #click {
     font-family: Arial;
     font-size: large;
-    width: 100px;
-    height:25px;
+    width: 120px;
+    height: 25px;
     border-radius: 12px;
     border: 2px solid black;
+    cursor: pointer;
+
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"], input[type="number"] {
     border-radius: 12px;
     font-family: Arial;
     font-size: large;
-
-
 }
-
 
 #click {
     font-size: large;
     width: 250px;
-    height:50px;
+    height: 50px;
     font-family: Arial;
+    cursor: pointer;
+
 }
 
 .register, .login, .age, .ability, .frequency, .results {
@@ -66,44 +71,41 @@ input[type="text"], input[type="password"] {
     font-size: large;
 }
 
-input[type="radio"]{
+input[type="radio"] {
     font-family: Arial;
     font-size: large;
-}
+    cursor: pointer;
 
+}
 
 #webTable {
     border: 1px solid white;
-    width:100%;
-    height:50px;
+    width: 100%;
+    height: 50px;
     font-family: Arial;
     font-size: large;
 }
 
-#usabilityTable{
+#usabilityTable {
     border: 1px solid white;
-    width:50%;
-    height:50px;
+    width: 50%;
+    height: 50px;
     font-family: Arial;
     font-size: large;
     /*text-align: center;*/
 }
 
-th, td {
-    border: 1px solid white;
-    height:50px;
-
+#webTable img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
-#webTable img{
-    display:block;
-    width:100%;
-    height:auto;
+#img1, #img2, #img3, #img4 {
+    position : absolute;
+    margin-left: 450px;
+    border-radius: 8px;
 }
-
-
-
-
 
 
 /*SLIDESHOW STUFF*/
@@ -121,14 +123,14 @@ th, td {
 }
 
 /* Next & previous buttons */
-.prev, .next {
+.previous, .next {
     cursor: pointer;
     position: absolute;
     top: 50%;
     width: auto;
     margin-top: -30px;
     padding: 16px;
-    color: #888;
+    color: black;
     font-weight: bold;
     font-size: 20px;
     border-radius: 0 3px 3px 0;
@@ -143,8 +145,8 @@ th, td {
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
+.previous:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
     color: white;
 }
 
@@ -152,7 +154,6 @@ p #slides {
     font-family: Arial;
     font-size: large;
 }
-
 
 #advSlideshow {
     margin: 50px auto;
@@ -172,10 +173,9 @@ p #slides {
     bottom: 10px;
 }
 
-
 /*NAVBAR STUFF*/
-#navbar{
-    margin:0 auto;
+#navbar {
+    margin: 0 auto;
 }
 
 #navbar ul {
@@ -188,13 +188,11 @@ p #slides {
     font-size: 150%;
 }
 
-
 #navbar li {
     display: inline-block;
     margin-right: -8px;
     width: 15%;
     font-family: Arial;
-
 
 }
 
@@ -231,7 +229,6 @@ p #slides {
 
 }
 
-
 .dropdown {
     position: relative;
     display: inline-block;
@@ -245,7 +242,6 @@ p #slides {
     min-width: 160px;
     z-index: 1;
     width: 100%;
-
 
 }
 
@@ -267,10 +263,6 @@ p #slides {
     background-color: white;
 }
 
-
-
-
-
 /*QUIZ STUFF*/
 
 .quiz {
@@ -282,7 +274,7 @@ p #slides {
     font-size: large;
 }
 
-#after_submit{
+#after_submit {
     text-align: center;
     visibility: hidden;
 }

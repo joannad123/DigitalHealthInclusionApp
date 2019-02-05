@@ -36,6 +36,7 @@
 
         <br>
         <input type="button" value="Previous" onclick="location.href='quizzes.php'">
+        <input type="button" value="Main Menu" onclick="location.href='basicMenu.php'">
         <input name = "button" type = "submit" value = "Submit" >
         <br>
 

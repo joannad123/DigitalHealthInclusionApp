@@ -8,6 +8,8 @@
     <script src="previous.js"></script>
 </head>
 <body>
+<form id="pharmacy" name="pharmacy" method="post">
+
 <h1>Listed below are websites which offer online prescription ordering.</h1>
 <h2>They are ranked in order of usability, with the most user friendly page at the top.</h2>
 <h3>You can view the criteria used to rank these pages by clicking the previous button and selecting<br>
@@ -43,9 +45,12 @@
 
     <p><input type="button" value="Previous" onclick="goBack()"></p>
 
+    <p><input name="button" type="submit" value="Main Menu"></p>
+
     <p><input type ="button" value="Logout" id="logout"
               onclick="window.location = 'logout.php'"/></p>
 </div>
+</form>
 
 <?php
 
@@ -58,6 +63,20 @@ if(empty($_SESSION)) {
 }
 
 $loggedInUser = $_SESSION['username'];
+
+if (isset($_POST['button'])) {
+
+    $sqlUsersScore = "SELECT score FROM `user_score` WHERE `username` = '$loggedInUser' AND `score` = '1'";
+    $resultScore = $conn->query($sqlUsersScore);
+
+    if ($resultScore->num_rows > 0) {
+        //redirect to basic menu
+        header("Location: basicMenu.php");
+    } else {
+        header("Location: advancedMenu.php");
+    }
+}
+
 
 
 ?>

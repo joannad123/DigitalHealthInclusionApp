@@ -48,7 +48,7 @@
     $sql = "";
 
     if($username != "" && $password != "") {
-        $sql = "INSERT INTO `user_score` (`username`, `password`, `age`, `ability`, `frequency`, `score`, `logincount`, `loginquiz`, `safetyquiz`, `appquiz`) VALUES ('$username', '$password', '0', '0', '0', '0', '0', '0', '0', '0');";
+        $sql = "INSERT INTO `user_score` (`username`, `password`, `age`, `ability`, `frequency`, `score`, `logincount`, `loginquiz`, `safetyquiz`, `appquiz`) VALUES ('$username', '$password', '0', '0', '0', '1', '0', '0', '0', '0');";
         if ($conn->query($sql) === TRUE) {
             echo "<script>
         alert('Account created successfully, now login');

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
     <link rel="stylesheet" href="style.css">
     <script src="previous.js"></script>
@@ -13,7 +14,8 @@
     <p><input type ="button" value="Webpage Recommender" id="optionsBtn"
               onclick="window.location = 'cancerChoice.php'"/></p>
 
-    <p><input type="button" value="Previous" onclick="goBack()"></p>
+
+    <p><input type="button" value="Main Menu" onclick="location.href='basicMenu.php'"></p>
 
     <p><input type ="button" value="Logout" id="logout"
               onclick="window.location = 'logout.php'"/></p>

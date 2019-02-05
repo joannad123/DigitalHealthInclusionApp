@@ -2,11 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usability Checklist</title>
     <link rel="stylesheet" href="style.css">
     <script src="previous.js"></script>
 </head>
 <body>
+<form id="usability" name="usability" method="post">
+
 <h1>This is the usability checklist used to rank websites in this application.</h1>
 <h2>The more ticks a website has next to each criteria, the higher it will be ranked.</h2>
 <h3>Sites will be scored as follows : a tick equals 5 points, a circle is 2 points and a cross is 0 points. </h3>
@@ -38,6 +41,40 @@
 
     <p><input type="button" value="Previous" onclick="goBack()"></p>
 
+    <p><input name="button" type="submit" value="Main Menu"></p>
+
     <p><input type ="button" value="Logout" id="logout"
               onclick="window.location = 'logout.php'"/></p>
 </div>
+</form>
+
+<?php
+
+include("config.php");
+
+session_start();
+
+if (empty($_SESSION)) {
+    header("Location: register.php");
+}
+
+$loggedInUser = $_SESSION['username'];
+
+if (isset($_POST['button'])) {
+
+    $sqlUsersScore = "SELECT score FROM `user_score` WHERE `username` = '$loggedInUser' AND `score` = '1'";
+    $resultScore = $conn->query($sqlUsersScore);
+
+    if ($resultScore->num_rows > 0) {
+        //redirect to basic menu
+        header("Location: basicMenu.php");
+    } else {
+        header("Location: advancedMenu.php");
+    }
+}
+
+
+?>
+
+</body>
+</html>

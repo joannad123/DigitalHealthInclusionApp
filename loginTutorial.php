@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Tutorial</title>
     <link rel="stylesheet" href="style.css">
     <script src="slideshow.js"></script>
@@ -41,7 +42,7 @@
         <p id="slides">1. Enter a username and password which you will remember.</p>
         <p id="slides">2. Click the submit button.</p>
         <p id="slides">As long as the username you have chosen is available, you will be redirected to the login page.</p>
-        <p id="slides"><img src="register.png"></p>
+        <p id="slides"><img src="images/register.png" alt="Register form"></p>
     </div>
 
     <div class="mySlides">
@@ -49,11 +50,12 @@
         <p id="slides">1. Enter your username and password.</p>
         <p id="slides">2. Click the submit button.</p>
         <p id="slides">As long as your username and password are correct, you will be redirected to the first question.</p>
-        <p id="slides"><img src="register.png"></p>
+        <p id="slides"><img src="images/register.png" alt="Login form"></p>
     </div>
 
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <a href="#" class="previous" onclick="plusSlides(-1)">&laquo; Previous</a>
+    <a href="#" class="next" onclick="plusSlides(1)">Next &raquo;</a>
+
 </div>
 
 <div>
@@ -64,4 +66,9 @@
     <p><input type ="button" value="Go To Register" id="loginTutBtn"
               onclick="window.location = 'register.php'"/>
 </div>
+
+
+
+</body>
+</html>
 

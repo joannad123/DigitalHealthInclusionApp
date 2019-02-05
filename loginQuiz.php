@@ -39,7 +39,8 @@
         <input type="radio" id="12" name="Q4" value="ans3"> <label for="12">Quit the page immediately</label><br>
 
         <br>
-        <input type="button" value="Previous" onclick="location.href='quizzes.php'"">
+        <input type="button" value="Previous" onclick="location.href='quizzes.php'">
+        <input type="button" value="Main Menu" onclick="location.href='basicMenu.php'">
         <input name="button" type="submit" value="Submit">
         <br>
 
