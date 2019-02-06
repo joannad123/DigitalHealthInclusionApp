@@ -12,7 +12,7 @@
 <div class = "basicMenu">
 
     <p><input type ="button" value="Webpage Recommender" id="optionsBtn"
-              onclick="window.location = 'pharmacyPages.php'"/></p>
+              onclick="window.location = 'usabilityPharmacyQ.php'"/></p>
 
     <p><input type ="button" value="Prescription Tutorial" id="optionsBtn"
               onclick="window.location = 'prescriptionTutorial.php'"/></p>

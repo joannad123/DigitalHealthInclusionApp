@@ -10,34 +10,32 @@
 <body>
 <form id="cancerchoice" name="cancerchoice" method="post">
 
-<h1>Please choose which category you would like to see recommended websites for.</h1>
-<div class = "basicMenu">
+    <h1>Please choose which category you would like to see recommended websites for.</h1>
+    <div class="basicMenu">
 
-    <p><input type ="button" value="Breast Cancer Support Pages" id="optionsBtn"
-              onclick="window.location = 'breastCancerPages.php'"/></p>
+        <p><input name="button1" type="submit" value="Breast Cancer Support Pages" id="optionsBtn"/></p>
 
-    <p><input type ="button" value="Lung Cancer Support Pages" id="optionsBtn"
-              onclick="window.location = 'lungCancerPages.php'"/></p>
+        <p><input name="button2" type="submit" value="Lung Cancer Support Pages" id="optionsBtn"/></p>
 
-    <p><input type ="button" value="Usability Chart" id="optionsBtn"
-              onclick="window.location = 'usability.php'"/></p>
+        <p><input type="button" value="Usability Chart" id="optionsBtn"
+                  onclick="window.location = 'usability.php'"/></p>
 
-    <p><input type="button" value="Previous" onclick="goBack()"></p>
+        <p><input type="button" value="Previous" onclick="goBack()"></p>
 
-    <p><input name="button" type="submit" value="Main Menu"></p>
+        <p><input name="button" type="submit" value="Main Menu"></p>
 
-    <p><input type ="button" value="Logout" id="logout"
-              onclick="window.location = 'logout.php'"/></p>
-</div>
+        <p><input type="button" value="Logout" id="logout"
+                  onclick="window.location = 'logout.php'"/></p>
+    </div>
 </form>
 
 <?php
 
-include ("config.php");
+include("config.php");
 
 session_start();
 
-if(empty($_SESSION)) {
+if (empty($_SESSION)) {
     header("Location: register.php");
 }
 
@@ -55,6 +53,56 @@ if (isset($_POST['button'])) {
         header("Location: advancedMenu.php");
     }
 }
+
+if (isset($_POST['button1'])) {
+
+    $sql = "SELECT usability FROM `user_score` WHERE `username` = '$loggedInUser' AND `usability` = '1'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        header("Location: breastCGraphics.php");
+    }
+
+    $sql = "SELECT usability FROM `user_score` WHERE `username` = '$loggedInUser' AND `usability` = '2'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        header("Location: breastCNavigation.php");
+    }
+
+    $sql = "SELECT usability FROM `user_score` WHERE `username` = '$loggedInUser' AND `usability` = '3'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        header("Location: breastCStyles.php");
+    }
+}
+
+if (isset($_POST['button2'])) {
+
+    $sql = "SELECT usability FROM `user_score` WHERE `username` = '$loggedInUser' AND `usability` = '1'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        header("Location: lungGraphics.php");
+    }
+
+    $sql = "SELECT usability FROM `user_score` WHERE `username` = '$loggedInUser' AND `usability` = '2'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        header("Location: lungNavigation.php");
+    }
+
+    $sql = "SELECT usability FROM `user_score` WHERE `username` = '$loggedInUser' AND `usability` = '3'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        header("Location: lungStyles.php");
+    }
+
+}
+
 
 ?>
 

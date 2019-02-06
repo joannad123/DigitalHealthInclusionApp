@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advanced Menu</title>
     <link rel="stylesheet" href="style.css">
     <script src="slideshow.js"></script>
@@ -20,20 +21,24 @@
             </div></li>
         <li>
             <div class="dropdown">
+                <button class="dropbtn">Digital Health</button>
+                <div class="dropdown-content">
+                    <a href="digitalHealth.php">What is it?</a>
+                </div>
+            </div></li>
+        <li>
+            <div class="dropdown">
                 <button class="dropbtn">Cancer</button>
                 <div class="dropdown-content">
                     <a href="cancerChoice.php">Recommended Sites</a>
-                    <a href="logout.php">Category 2</a>
-                    <a href="logout.php">Category 3</a>
                 </div>
             </div></li>
         <li>
             <div class="dropdown">
                 <button class="dropbtn">Pharmacy</button>
                 <div class="dropdown-content">
-                    <a href="logout.php">Recommended Sites</a>
-                    <a href="logout.php">Category 2</a>
-                    <a href="logout.php">Category 3</a>
+                    <a href="pharmacySteps.php">Recommended Sites</a>
+                    <a href="prescriptionTutorial.php">Prescription Tutorial</a>
                 </div>
             </div></li>
             <li><div class="dropdown">

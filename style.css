@@ -101,6 +101,10 @@ input[type="radio"] {
     height: auto;
 }
 
+td, th, tr {
+    border: 1px solid white;
+}
+
 #img1, #img2, #img3, #img4 {
     position : absolute;
     margin-left: 450px;
