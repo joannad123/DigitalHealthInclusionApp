@@ -18,7 +18,7 @@
 
     <div class="mySlides" style="display: block;">
         <p id="slides">
-        <h1>What is digital health?</h1></p>
+        <h1>What is digital health?  <img src="images/digih.png" alt="Digital Health"></h1></p>
         <p id="slides">Digital health is the use of technologies to enhance health and the overall efficiency of the
             healthcare system.</p>
         <p id="slides">To help explain what digital health is, we will look specifically at a few categories.</p>
@@ -26,7 +26,7 @@
 
     <div class="mySlides">
         <p id="slides">
-        <h1>Telemedicine</h1></p>
+        <h1>Telemedicine   <img src="images/telemedicine.png" alt="Telemedicine"></h1></p>
         <p id="slides">One of the main aims of moving healthcare online is to make it easier for the patient.</p>
         <p id="slides">Telemedicine is a way of providing health advice through mobile apps or video chats.</p>
         <p id="slides">There are many applications which provide this service.</p>
@@ -35,7 +35,7 @@
 
     <div class="mySlides">
         <p id="slides">
-        <h1>Wearables</h1></p>
+        <h1>Wearables   <img src="images/wearables.png" alt="Wearables"></h1></p>
         <p id="slides">Wearables are technologies which can be comfortably worn on the body.</p>
         <p id="slides">Two well-known examples of wearables are Apple Watch and Fitbit.</p>
         <p id="slides">These devices have a number of capabilities such as tracking your blood pressure, heart rate and
@@ -44,7 +44,7 @@
 
     <div class="mySlides">
         <p id="slides">
-        <h1>mHealth</h1></p>
+        <h1>mHealth     <img src="images/mhealth.png" alt="mHealth"></h1></p>
         <p id="slides">mHealth is mobile health programs, made specifically for smart devices such as mobiles and
             tablets.</p>
         <p id="slides">There is a huge range of different mHealth apps.</p>

@@ -30,14 +30,14 @@
             <div class="dropdown">
                 <button class="dropbtn">Cancer</button>
                 <div class="dropdown-content">
-                    <a href="cancerChoice.php">Recommended Sites</a>
+                    <a href="usabilityCancerQ.php">Recommended Sites</a>
                 </div>
             </div></li>
         <li>
             <div class="dropdown">
                 <button class="dropbtn">Pharmacy</button>
                 <div class="dropdown-content">
-                    <a href="pharmacySteps.php">Recommended Sites</a>
+                    <a href="usabilityPharmacyQ.php">Recommended Sites</a>
                     <a href="prescriptionTutorial.php">Prescription Tutorial</a>
                 </div>
             </div></li>
