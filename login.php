@@ -76,7 +76,13 @@
                     window.location.href='age.php';
                     </script>";
             }
+        } else {
+            echo "<script>
+                    alert('Something went wrong there! Please make sure you are entering the correct username and password.');
+                    </script>";
         }
+
+
     }
 
 
