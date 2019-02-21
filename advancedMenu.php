@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="slideshow.js"></script>
 </head>
-<body>
+<p>
 
 <div id="navbar">
     <ul>
@@ -51,6 +51,7 @@
     </ul>
 </div>
 
+
 <div id="advSlideshow">
     <div>
         <img src="images/digital.png" alt="Digital"/>
@@ -62,6 +63,7 @@
         <img src="images/digitalinc.png" alt="Digital inclusion"/>
     </div>
 </div>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script>

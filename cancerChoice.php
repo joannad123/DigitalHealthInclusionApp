@@ -17,9 +17,6 @@
 
         <p><input name="button2" type="submit" value="Lung Cancer Support Pages" id="optionsBtn"/></p>
 
-        <p><input type="button" value="Usability Chart" id="optionsBtn"
-                  onclick="window.location = 'usability.php'"/></p>
-
         <p><input type="button" value="Previous" onclick="goBack()"></p>
 
         <p><input name="button" type="submit" value="Main Menu"></p>
