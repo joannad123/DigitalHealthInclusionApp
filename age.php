@@ -14,7 +14,7 @@
     <div class = "age">
 
         <p><u>Age</u></p>
-        <input type = "number" name="age">
+        <input type = "text" name="age">
 
         <p><input type = "submit" name="submit"></p>
 

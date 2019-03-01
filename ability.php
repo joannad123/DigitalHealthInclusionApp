@@ -2,13 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ability</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>How would you rate your ability to use an application<br>
-    and its basic functions (For example, logging in<br>
-    or navigating menus)?</h1>
+<h1>How would you rate your digital ability?</h1>
 <div class = "ability">
 
     <form id= "ability" method="post">
