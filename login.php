@@ -33,7 +33,7 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $username = mysqli_real_escape_string($conn, $_POST['username']);
-        $password = mysqli_real_escape_string($conn, $_POST['password']);
+        $password = md5 (mysqli_real_escape_string($conn, $_POST['password']));
 
         $sql = "SELECT id FROM user_score WHERE username = '$username' and password = '$password'";
         $result = mysqli_query($conn, $sql);

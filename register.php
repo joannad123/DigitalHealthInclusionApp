@@ -36,7 +36,7 @@
     include ("config.php");
 
     $username = strip_tags((isset($_POST["username"]) ? $_POST["username"] : ""));
-    $password = (isset($_POST["password"]) ? ($_POST["password"]) : "");
+    $password = (isset($_POST["password"]) ? md5 ($_POST["password"]) : "");
 
     if (isset($_POST['button'])) {
 
